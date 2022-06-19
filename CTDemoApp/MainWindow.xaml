@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CTDemoApp"
+        xmlns:viewmodel="clr-namespace:CTDemoApp.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Community Tookit MVVM Demo" Height="450" Width="800">
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+    <StackPanel Margin="10">
+        <TextBlock Text="First Name:"/>
+        <TextBox Text="{Binding FirstName}"/>
+        <TextBlock Text="Last Name:"/>
+        <TextBox Text="{Binding LastName}"/>
+        <TextBlock Text="{Binding FullName}"/>
+        <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+    </StackPanel>
 </Window>
